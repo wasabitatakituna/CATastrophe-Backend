@@ -67,7 +67,7 @@ router.post('/logout', (req, res) => {
     res.clearCookie('token', {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
-        sameSite: 'none'
+        sameSite: 'Strict'
     });
     res.json({ message: 'Successfully Logged Out' });
 });
@@ -108,7 +108,7 @@ router.delete('/delete', async (req, res) => {
         res.clearCookie('token', {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production',
-            sameSite: 'none'
+            sameSite: 'Strict'
         });
 
         res.status(201).json({ message: 'Successfully Deleted Account.' })
